@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Currency from './Currency';
+import { AppContext } from '../context/AppContext;
 
 function CurrencyConverter() {
   const [selectedCurrency, setSelectedCurrency] = useState('$');
