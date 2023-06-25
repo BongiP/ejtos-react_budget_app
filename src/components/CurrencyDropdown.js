@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import AllocationForm from './AllocationForm';
 
-const CurrencySelector = () => {
-  const [currency, setCurrency] = useState('£');
+const CurrencySelector = ({ setCurrency }) => {
+  const [currency, setCurrencyState] = useState('£');
 
-  const handleCurrencyChange = (event) => {
+const handleCurrencyChange = (event) => {
+    setCurrencyState(event.target.value);
     setCurrency(event.target.value);
   };
 
@@ -16,7 +18,12 @@ const CurrencySelector = () => {
         <option value="€">€ Euros</option>
         <option value="₹">₹ Rupees</option>
       </select>
+      {/* Pass currency state to AllocationForm component as prop */}
+      <AllocationForm currency={currency} />
+      {/* Pass handleCurrencyChange function to CurrencySelector component as prop */}
+      <CurrencySelector onCurrencyChange={handleCurrencyChange} />
     </div>
+     
   );
 };
 

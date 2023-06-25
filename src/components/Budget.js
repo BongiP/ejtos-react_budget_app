@@ -34,6 +34,7 @@ const Budget = () => {
     return (
         <div className='alert alert-secondary'>
             <span>Budget: </span>
+        
             <input
                 type='number'
                 value={editableBudget}
@@ -43,7 +44,8 @@ const Budget = () => {
             />
             <button onClick={handleIncrement}><FaCaretUp /></button>
             <button onClick={handleDecrement}><FaCaretDown /></button>
-        </div>
+            </div>
+        
     );
 };
 
