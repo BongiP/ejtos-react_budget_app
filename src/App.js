@@ -6,7 +6,7 @@ import ExpenseTotal from './components/ExpenseTotal';
 import ExpenseList from './components/ExpenseList';
 import AllocationForm from './components/AllocationForm';
 import RemainingBudget from './components/Remaining';
-import CurrencyDropdown from "./components/CurrencyDropdown";
+import CurrencySelector from "./components/CurrencySelector";
 const App = () => {
     return (
         <AppProvider>
@@ -24,7 +24,7 @@ const App = () => {
                     </div>
                     <div className="app">
                         {/* your app JSX here */}
-                        <CurrencyDropdown /> {/* render your component here */}
+                        <CurrencySelector /> {/* render your component here */}
                     </div>    
                 </div>
                 <h3 className='mt-3'>Allocation</h3>
