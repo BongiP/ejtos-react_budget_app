@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const CurrencySelector = (props) => {
+  const [currency, setCurrency] = useState('£');
+  const handleCurrencyChange = (event) => {
+    setCurrency(event.target.value);
+  };
   return (
-    <div>
+    <div className='container'>
       <label htmlFor="currency" style={{ color: 'green' }}>Select currency:</label>
-      <select id="currency" value={props.currency} onChange={props.onCurrencyChange} style={{ backgroundColor: 'lightgreen' }}>
+      <select id="currency" value={currency} onChange={handleCurrencyChange} style={{ backgroundColor: 'lightgreen' }}>
         <option value="£">£ Pounds</option>
         <option value="$">$ Dollars</option>
         <option value="€">€ Euros</option>

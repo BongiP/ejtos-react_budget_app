@@ -1,10 +1,14 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { AppContext } from '../context/AppContext';
 import { FaCaretUp, FaCaretDown } from 'react-icons/fa';
 
-const Budget = () => {
+const Budget = (props) => {
     const { budget, dispatch } = useContext(AppContext);
     const [editableBudget, setEditableBudget] = useState(budget);
+
+    useEffect(() => {
+        console.log('AllocationForm re-rendered');
+      }, [props.currency]);
     
     const handleBudgetChange = (event) => {
         setEditableBudget(event.target.value);
@@ -34,7 +38,7 @@ const Budget = () => {
     return (
         <div className='alert alert-secondary'>
             <span>Budget: </span>
-        
+            <span>£{props.currency}</span>
             <input
                 type='number'
                 value={editableBudget}

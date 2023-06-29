@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import CurrencySelector from './CurrencySelector';
 import AllocationForm from './AllocationForm';
+import Budget from './Budget';
 
 const ParentComponent = () => {
   const [currency, setCurrency] = useState('£');
