@@ -86,7 +86,11 @@ const AllocationForm = (props) => {
               Reduce
             </option>
           </select>
-          <span>{props.currency}</span> {/* Add this line */}
+          <span></span>
+          <div className='input-group-prepend'>
+            <span className='input-group-text'>£{props.currency}</span>
+            
+          </div>
           <input
             required='required'
             type='number'
